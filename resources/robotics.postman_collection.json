@@ -1,0 +1,27 @@
+{
+	"info": {
+		"_postman_id": "1741dc93-d94e-4cdb-a4c8-7155cabc4a2d",
+		"name": "robotics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "start",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "stop",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,7 @@
+START = "4"
+STOP = "5"
+JOG1_1 = "1"
+JOG1_2 = "2"
+DELIVERY = "3"
+SETSTEP = "10"
+STEP = 3

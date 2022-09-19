@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+                <base xmlns="http://www.w3.org/1999/xhtml" href="http://51r7m51573.qicp.vip/" />
+                <link rel="shortcut icon" type="favicon.ico" href="docs/robot.ico">
+                <link rel="stylesheet" href="docs/css/iconfont.css">
+                <style>
+                    *{
+                        margin: 0;
+                        padding: 0;
+                        transition: all .2s ease-out;
+                    }
+                    html,
+                    body
+                    {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: top;
+                        background: linear-gradient(109.476575498932deg, rgba(248, 198, 215,1) 5.911420204978038%,rgba(175, 233, 249,1) 95.95534407027817%);
+                        /* background: linear-gradient(to top left, #7ED7DC,#A89ECE); */
+                    }
+                </style>
+                <script>
+                    function getRWServiceResource()
+                    {
+                        var rwServiceResource = new XMLHttpRequest();
+                        rwServiceResource.onreadystatechange = function()
+                        {
+                            if (rwServiceResource.readyState == 4 && rwServiceResource.status == 200)
+                            {
+                            }
+                        }
+                        rwServiceResource.open("GET","http://51r7m51573.qicp.vip/rw/system?json=1",true,"Default User","robotics");
+                        rwServiceResource.send();
+                    }
+                </script>
+                <script type="text/javascript">
+                    window.onload=timeInterval;
+                    function timeInterval()
+                    {
+                        getRWServiceResource();
+                        window.setInterval(function() {
+                            getRWServiceResource()
+                        },1000)
+                    }
+                    function getRWServiceResource()
+                    {
+                        var rwServiceResource = new XMLHttpRequest();
+                        rwServiceResource.onreadystatechange = function()
+                        {
+                         if (rwServiceResource.readyState == 4 && rwServiceResource.status == 200)
+                            {
+                                var obj = JSON.parse(rwServiceResource.responseText);
+                                var service = obj._embedded._state[0];
+                                document.getElementById("rax_1").innerHTML = "1轴=" + (service.rax_1*1).toFixed(2)+", ";
+                                document.getElementById("rax_2").innerHTML = "2轴=" + (service.rax_2*1).toFixed(2)+", ";
+                                document.getElementById("rax_3").innerHTML = "3轴=" + (service.rax_3*1).toFixed(2)+", ";
+                                document.getElementById("rax_4").innerHTML = "4轴=" + (service.rax_4*1).toFixed(2)+", ";
+                                document.getElementById("rax_5").innerHTML = "5轴=" + (service.rax_5*1).toFixed(2)+", ";
+                                document.getElementById("rax_6").innerHTML = "6轴=" + (service.rax_6*1).toFixed(2)+"";     
+                            }
+                        }
+                        rwServiceResource.open("GET","http://51r7m51573.qicp.vip/rw/motionsystem/mechunits/ROB_1/jointtarget?json=1",true);
+                        rwServiceResource.send();
+                    }
+                </script>
+        </head>
+        
+<body>
+    <div  style="text-align:center;">
+
+        <label class="iconfont icon-jiqiren_o" style="color: #008CBA;"> 网页控制ABB机器人运动</label>
+        <label class="iconfont icon-jiqiren_o" style="color: #008CBA;"></label>
+        <br></br>
+        <label id="rax_1" style="color: #008CBA;"></label>
+        <label id="rax_2" style="color: #008CBA;"></label>
+        <label id="rax_3" style="color: #008CBA;"></label>
+        <label id="rax_4" style="color: #008CBA;"></label>
+        <label id="rax_5" style="color: #008CBA;"></label>
+        <label id="rax_6" style="color: #008CBA;"></label>
+        <br></br>
+        <table>
+            <br>
+            <tr>
+            <input  id="btn_jog1_1" class="button button2" type="button" value="jog1+">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog1_2" class="button button2" type="button" value="jog1-">
+            </tr>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog2_1" class="button button2" type="button" value="jog2+">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog2_2" class="button button2" type="button" value="jog2-">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog3_1" class="button button2" type="button" value="jog3+">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog3_2" class="button button2" type="button" value="jog3-">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog4_1" class="button button2" type="button" value="jog4+">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog4_2" class="button button2" type="button" value="jog4-">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog5_1" class="button button2" type="button" value="jog5+">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog5_2" class="button button2" type="button" value="jog5-">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog6_1" class="button button2" type="button" value="jog6+">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_jog6_2" class="button button2" type="button" value="jog6-">
+            <br></br>
+            <br>
+                <input  id="btnX1" class="button button1" type="button" value="X+">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input  id="btnX2" class="button button1" type="button" value="X-">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input  id="btnY1" class="button button1" type="button" value="Y+">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input  id="btnY2" class="button button1" type="button" value="Y-">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input  id="btnZ1" class="button button1" type="button" value="Z+">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input  id="btnZ2" class="button button1" type="button" value="Z-">
+            </br>
+            <br></br>
+            <br>
+            <input  id="btn_ppToMain" class="button button3" type="button" value="PP移至Main">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_Start" class="button button3" type="button" value="启动程序">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input  id="btn_Stop" class="button button4" type="button" value="停止程序">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="input_val" class="input" type="text" name="values" value/>
+                &nbsp;&nbsp;
+            <input id="ModifyStep" type="button" value="修改步长" class='button button3'/>
+            </br>
+        </table>
+    </div>
+    <script src="docs/jquery-3.3.1.min.js" type="text/javascript" rel="stylesheet"></script>
+    <script src="js.js" type="text/javascript"></script>
+</body>
+</html>
